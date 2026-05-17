@@ -1,2 +1,3 @@
-# synky-landingpage
-Landing page for the Synky
+# Landing page
+
+Static landing page site for Synky, hosted in GitHub Pages.

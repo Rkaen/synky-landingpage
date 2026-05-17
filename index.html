@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Synky — keep AWS IAM and GitHub Actions OIDC configuration in sync from YAML desired state."
+    />
+    <title>Synky</title>
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="/">
+        <img
+          class="logo-mark"
+          src="assets/synky-mark.png"
+          width="28"
+          height="28"
+          alt=""
+        />
+        <span>Synky</span>
+      </a>
+      <nav class="nav">
+        <a href="#how-it-works">How it works</a>
+        <a class="btn btn-ghost" href="https://app.synky.io">Sign in</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">DevSecOps · AWS · GitHub Actions</p>
+        <h1>Effortless OIDC and IAM configuration.</h1>
+        <p class="lead">
+          Per-repo least-privilege AWS IAM roles, assumed via OIDC, with event-driven permission sync. 
+          Enroll your org and never worry about your deployment roles again.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://app.synky.io">Get started</a>
+          <a class="btn btn-secondary" href="#how-it-works">Learn more</a>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="features">
+        <article class="feature">
+          <h2>Desired state in YAML</h2>
+          <p>Map repos to AWS accounts and roles. Edit in the UI or upload.</p>
+        </article>
+        <article class="feature">
+          <h2>PR-driven sync</h2>
+          <p>Webhooks on pull requests fetch actual state, diff, and pause for approval when IAM changes.</p>
+        </article>
+        <article class="feature">
+          <h2>In-PR approvals</h2>
+          <p>Reply with <code>/approve</code> or <code>/reject</code> to approve or reject changes to keep developers moving.</p>
+        </article>
+        <article class="feature">
+          <h2>Audit by default</h2>
+          <p>Append-only log per org. Every change tied to actor, resource, and decision.</p>
+        </article>
+      </section>
+
+      <section class="cta-band">
+        <h2>Built for Security and DevOps engineers</h2>
+        <p>AWS IAM and GitHub Actions today. Terraform provider on the roadmap.</p>
+        <button type="button" class="btn btn-primary" data-waitlist-open>
+          Join the waitlist
+        </button>
+      </section>
+    </main>
+
+    <div id="waitlist-drawer" class="drawer" hidden aria-hidden="true">
+      <div class="drawer-backdrop" data-waitlist-close tabindex="-1"></div>
+      <aside
+        class="drawer-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="waitlist-title"
+      >
+        <header class="drawer-header">
+          <h2 id="waitlist-title">Join the waitlist</h2>
+          <button
+            type="button"
+            class="drawer-close"
+            data-waitlist-close
+            aria-label="Close"
+          >
+            ×
+          </button>
+        </header>
+
+        <form
+          id="waitlist-form"
+          class="waitlist-form"
+          action="https://formspree.io/f/mykvygdz"
+          method="POST"
+          novalidate
+        >
+          <label class="field">
+            <span class="field-label">Name</span>
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label class="field">
+            <span class="field-label">Email</span>
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+          <label class="field">
+            <span class="field-label">Company name</span>
+            <input type="text" name="company" autocomplete="organization" required />
+          </label>
+          <label class="field">
+            <span class="field-label">Job title</span>
+            <input type="text" name="job_title" autocomplete="organization-title" required />
+          </label>
+          <p id="waitlist-error" class="waitlist-error" hidden role="alert">
+            Something went wrong. Please try again.
+          </p>
+          <button type="submit" class="btn btn-primary btn-full">Submit</button>
+        </form>
+
+        <div id="waitlist-success" class="waitlist-success" hidden>
+          <p>You're on the list. We'll be in touch soon.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="site-footer">
+      <span>© Synky</span>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="mailto:hello@synky.io">Contact</a>
+    </footer>
+    <script src="waitlist.js"></script>
+  </body>
+</html>
